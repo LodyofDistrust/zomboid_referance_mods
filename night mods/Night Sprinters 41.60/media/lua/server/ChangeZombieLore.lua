@@ -61,20 +61,61 @@ local function changeLore()
 	local rain = RainManager:getRainIntensity();
 	local rv = 0.02;
 	local oldSpeed = getSandboxOptions():getOptionByName("ZombieLore.Speed"):getValue();
+	--local oldCognition = getSandboxOptions():getOptionByName("ZombieLore.Cognition"):getValue();  --- if speed stays same day and night swap to cognition
+	
 	local newSpeed;
+	local newStrength;
+	local newToughness;
+	local newCognition;
+	local newMemory;
+	local newSight;
+	local newHearing;
+	local newSmell;
 
+	---- if it's day and raining -------
 	if (hour >= startTime and hour < endTime) or (rain>rv and nsOptions.rainSprinters) then
 		newSpeed = nsOptions.modifiedSpeed
+		newStrength = nsOptions.modifiedStrength
+		newToughness = nsOptions.modifiedToughness
+		newCognition = nsOptions.modifiedCognition
+		newMemory = nsOptions.modifiedMemory
+		newSight = nsOptions.modifiedSight
+		newHearing = nsOptions.modifiedHearing
+		newSmell = nsOptions.modifiedSmell
 		--getSandboxOptions():set("ZombieLore.Speed",newSpeed);
+	---- if it's night -------
 	elseif (hour>=startTime or hour<endTime) and startTime>endTime then
 		newSpeed = nsOptions.modifiedSpeed
+		newStrength = nsOptions.modifiedStrength
+		newToughness = nsOptions.modifiedToughness
+		newCognition = nsOptions.modifiedCognition
+		newMemory = nsOptions.modifiedMemory
+		newSight = nsOptions.modifiedSight
+		newHearing = nsOptions.modifiedHearing
+		newSmell = nsOptions.modifiedSmell
 		--getSandboxOptions():set("ZombieLore.Speed",newSpeed);
 	else
+	---- it must be day and clear then -------
 		newSpeed = nsOptions.normalSpeed
+		newStrength = nsOptions.normalStrength
+		newToughness = nsOptions.normalToughness
+		newCognition = nsOptions.normalCognition
+		newMemory = nsOptions.normalMemory
+		newSight = nsOptions.normalSight
+		newHearing = nsOptions.normalHearing
+		newSmell = nsOptions.normalSmell
 		--getSandboxOptions():set("ZombieLore.Speed",newSpeed);
 	end
-	if newSpeed ~= oldSpeed then
+	if newSpeed ~= oldSpeed then  --- if speed stays same day and night swap to cognition
+	-- if newCognition ~= oldCognition then --- if cognition stays same day and night swap to speed
 		getSandboxOptions():set("ZombieLore.Speed",newSpeed);
+		getSandboxOptions():set("ZombieLore.Strength",newStrength);
+		getSandboxOptions():set("ZombieLore.Toughness",newToughness);
+		getSandboxOptions():set("ZombieLore.Cognition",newCognition);
+		getSandboxOptions():set("ZombieLore.Memory",newMemory);
+		getSandboxOptions():set("ZombieLore.Sight",newSight);
+		getSandboxOptions():set("ZombieLore.Hearing",newHearing);
+		getSandboxOptions():set("ZombieLore.Smell",newSmell);
 		if isServer() then
 			updateAllServerZoms();
 		end
