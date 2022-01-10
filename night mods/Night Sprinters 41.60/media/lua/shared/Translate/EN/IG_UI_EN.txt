@@ -27,7 +27,42 @@ IGUI_EN = {
   IGUI_NS_Sprinters = "Sprinters",
   IGUI_NS_FastShamblers = "Fast Shamblers",
   IGUI_NS_Shamblers = "Shamblers",
+  
   IGUI_NS_Random = "Random",
+  
+  IGUI_NS_strsuperhuman = "Superhuman",
+  IGUI_NS_strnormal = "Normal",
+  IGUI_NS_strweak = "Weak",
+  
+  IGUI_NS_toughtough = "Tough",
+  IGUI_NS_toughnormal = "Normal",
+  IGUI_NS_toughfragile = "Fragile",
+  
+  IGUI_NS_cognavndoor = "Navigation + Use Doors",
+  IGUI_NS_cognav = "Navigation",
+  IGUI_NS_cogbasicnav = "Basic Navigation",
+  
+  IGUI_NS_memlong = "Long",
+  IGUI_NS_memnormal = "Normal",
+  IGUI_NS_memshort = "Short",
+  IGUI_NS_memnone = "None",
+  
+  IGUI_NS_decslownweak = "Slows + Weakens",
+  IGUI_NS_decslow = "Slows",
+  IGUI_NS_decweak = "Weakens",
+  IGUI_NS_decno = "No Effects",
+  
+  IGUI_NS_sighteagle = "Eagle",
+  IGUI_NS_sightnormal = "Normal",
+  IGUI_NS_sightpoor = "Poor",
+  
+  IGUI_NS_hearpinpoint = "Pinpoint",
+  IGUI_NS_hearnormal = "Normal",
+  IGUI_NS_hearpoor = "Poor",
+  
+  IGUI_NS_smellpinpoint = "Bloodhound",
+  IGUI_NS_smellnormal = "Normal",
+  IGUI_NS_smellpoor = "Poor",
 
   IGUI_NS_Seasons_Tooltip = "Time is in military time.",
   IGUI_NS_pSettings_ToolTip = "Enable this to have settings stay the same forever on a certain world.",
